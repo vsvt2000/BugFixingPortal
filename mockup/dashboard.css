@@ -20,23 +20,24 @@
     float:left; 
     /* background:Red; */
     width:20%;
-    height:20%;
+   
 }
 .slogan{
     float:left; 
-    width:60%;
+    width:50%;
     height:70%;
-    margin-left: 10%;
+    margin-left: 15%;
     margin-top: 2%;
 }
 .icon{
-    float:right;
-    width:10%;
-    height:10%;
+    float:right;  
+}
+.container{
+  margin-top: 20px;
 }
 .query{
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 button {
     background-color: #04AA6D;
@@ -54,18 +55,19 @@ button {
   
   /* Style the search field */
   form.example input[type=text] {
-    padding: 10px;
+    padding: 10px;  
+    margin-left: 25%;
     font-size: 17px;
     border: 1px solid grey;
     float: left;
-    width: 80%;
+    width: 40%;
     background: #f1f1f1;
   }
   
   /* Style the submit button */
   form.example button {
     float: left;
-    width: 15%;
+    width: 10%;
     padding: 10px;
     background: #2196F3;
     color: white;
@@ -84,4 +86,12 @@ button {
     content: "";
     clear: both;
     display: table;
+  }
+
+  .popular,.active{
+    margin-top: 3%;
+  }
+
+  .popular-table,.active-table {
+    text-align: center;
   }
