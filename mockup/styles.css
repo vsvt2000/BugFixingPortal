@@ -36,10 +36,10 @@ form {
   
   .imgcontainer {
     width:50%;
-    height: fit-content;
+    height: 100%;
     float:left;
     text-align: center;
-    margin: 24px 0 12px 0;
+    /* margin: 24px 0 12px 0; */
 
   }
   
@@ -48,10 +48,12 @@ form {
     width:40%;
     float:right;
     
-    background-color:#f6f7fc;
+    /* background-color:#f6f7fc; */
     height: 100%;
     padding-bottom:20px;
-    padding-top:200px;
+    padding-left: 5%;
+    padding-right: 5%;
+    /* padding-top:1%; */
   }
   
   .new{
