@@ -5,7 +5,8 @@
   }
 
   #footer {
-    position: fixed;
+    position: absolute;
+    top: 600px;
     width: 100%;
     bottom: 0;
     left: 0;
