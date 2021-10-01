@@ -49,62 +49,48 @@
                     <img src='images/aboutus_image.jpg' class="aboutusimg">
                 </div>
 
-                <div class = "col-md-5" style="margin-top:60px">
-                <button type="button" class="collapsible">Who are we?</button>
-                <div class="content">
-                    <p>Bug fixing portal(BFP) is an application portal that empowers beginners, students, junior
-                        developers, senior developers and many more with the means to remove any impedes in
-                        their
-                        programming career.</p>
+                <div class="col-md-5" style="margin-top:60px">
+                    <button type="button" class="collapsible">Who are we?</button>
+                    <div class="content">
+                        <p>Bug fixing portal(BFP) is an application portal that empowers beginners, students, junior
+                            developers, senior developers and many more with the means to remove any impedes in
+                            their
+                            programming career.</p>
 
-                    <p>We house a myriad of problems solved from a variety of problem domains where programmers
-                        tend to
-                        get stuck. We relieve them of these difficulties ensuring SaaS as the top most priority.
-                    </p>
-                </div>
-                </div>
-                    
-                <script rel="stylesheet" type="text/javascript">
-                    var coll = document.getElementsByClassName("collapsible");
-                    var i;
-            
-                    for (i = 0; i < coll.length; i++) {
-                        coll[i].addEventListener("click", function () {
-                            this.classList.toggle("active");
-                            var content = this.nextElementSibling;
-                            if (content.style.display === "block") {
-                                content.style.display = "none";
-                            } else {
-                                content.style.display = "block";
-                            }
-                        });
-                    }
-                </script>
-                <!-- <div class="col-md-4">
-                    <div>
-
-                        <p class="text-muted who" onmouseenter="optionHover(this)" onmouseleave="optionHoverOff(this)"
-                            onclick="changeText('whoarewe')"><strong>Who are we?</strong></p>
-                        <p class="text-muted who" onmouseenter="optionHover(this)" onmouseleave="optionHoverOff(this)"
-                            onclick="changeText('whybfp')"><strong>Why BFP?</strong></p>
-                        <hr size="6">
+                        <p>We house a myriad of problems solved from a variety of problem domains where programmers
+                            tend to
+                            get stuck. We relieve them of these difficulties ensuring SaaS as the top most priority.
+                        </p>
                     </div>
-                    <div class="aboutus">
-                        <div id="whoarewe">
-                            <p>Bug fixing portal(BFP) is an application portal that empowers beginners, students, junior
-                                developers, senior developers and many more with the means to remove any impedes in
-                                their
-                                programming career.</p>
 
-                            <p>We house a myriad of problems solved from a variety of problem domains where programmers
-                                tend to
-                                get stuck. We relieve them of these difficulties ensuring SaaS as the top most priority.
-                            </p>
-                        </div>
+                    <button type="button" class="collapsible">Why BFP?</button>
+                    <div class="content">
+                        <p>Bug fixing portal(BFP) is an application portal developed by college students who have gone
+                            through similar scenarios and have strived hard to find the optimal solution which could
+                            now be passed on to others using this platform.</p>
                     </div>
-                </div> -->
+                </div>
             </div>
+
+            <script rel="stylesheet" type="text/javascript">
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
+
+                for (i = 0; i < coll.length; i++) {
+                    coll[i].addEventListener("click", function () {
+                        this.classList.toggle("active");
+                        var content = this.nextElementSibling;
+                        if (content.style.display === "block") {
+                            content.style.display = "none";
+                        } else {
+                            content.style.display = "block";
+                        }
+                    });
+                }
+            </script>
+
         </div>
+    </div>
     </div>
 </body>
 <br>
