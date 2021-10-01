@@ -20,8 +20,8 @@
 </head>
 
 <body>
-    <div class="outer">
-        <div class="header1 row">
+    <div class="outer" >
+        <div class="header1 row" style="margin:0px 0px 0px 0px">
             <nav class="navbar navbar-dark bg-black navbar-brand">
                 <div class="logo col-md-2 ">
                     
