@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,6 +37,7 @@
                           <a href="login.html">Logout</a>
 
                         </div>
+                        
                       </div>
                 </div>
                 <div class="slogan col-md-6 justify-content-center">

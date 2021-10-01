@@ -23,21 +23,29 @@
 		  ps.setString(1,uname);
 		  ps.setString(2,psw);
 		  ResultSet x = ps.executeQuery();
+		  out.print(x);
 		  int y=0;
+		  String y1="";
+		  
 		  while(x.next()){
+			  y1=x.getString("username");
 			  y+=1;
 		  }
+		  
 		  if(y>0){
 			  out.print("<p name='res' value='yes'>logged in successfully</p>");
-			  String redirectURL = "http://localhost:8083/bugfixing/dashboard.jsp";
+			  //String redirectURL = "http://localhost:8080/BFP/dashboard.jsp";
+			  out.print("here1");
 			  session = request.getSession();
-			  session.setAttribute("user", x.getString("username"));
-			  response.sendRedirect(redirectURL);
+			  out.print("here2");
+			  session.setAttribute("user", y1);
+			  out.print("here3");
+			  response.sendRedirect("dashboard.jsp");
 		  }
 		  else{
 			  out.print("<p name='res' value='no'>Wrong username or password :(((( </p>");
 			  String msg="Wrong username or password";
-			  String redirectURL = "http://localhost:8083/bugfixing/?msg="+msg;
+			  String redirectURL = "http://localhost:8080/BFP/?msg="+msg;
 			  response.sendRedirect(redirectURL);
 		  }
 	  }

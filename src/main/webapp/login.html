@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
 <body>
-<form  method="post">
+<form  method="post" action="login.jsp">
     <div class="float-container">
       <div class="imgcontainer">
         <img src="images/login.jpg" alt="bgimg" style="height:100% ; width:100%" >
@@ -33,7 +33,7 @@
           <label for="psw">Password</label>
           <input type="password" placeholder="Enter Password" name="psw" required>
   
-          <a href="dashboard.html"><button type="button" >Login</button></a>
+          <button type="submit" >Login</button>
           <p style="text-align: center;">or</p>
           <button type="submit" style="background-color:rgb(15, 14, 14);">Login with GitHub</button>
           <button type="submit" style="background-color:rgb(56, 40, 128);">Login with Linkedin</button>
@@ -48,5 +48,17 @@
       </div>
     
 </form> 
+<script>
+  	function getvals(){
+  		var sPageURL = window.location.search.substring(1);
+  		var ans=sPageURL.split('=')
+  		console.log(ans[1])
+  		if (ans.length>0){
+
+  			document.getElementById("msg").innerHTML=ans[1].replace(/%20/g,' ')
+  		}
+  	}
+  	</script> 
+	<p id="msg"><script>getvals()</script></p>
 </body>
 </html>
