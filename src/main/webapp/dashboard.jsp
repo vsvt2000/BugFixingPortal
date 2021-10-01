@@ -52,6 +52,15 @@
             </nav>
 
         </div>
+        
+        <div style="background-color:red">
+        <%
+		session = request.getSession();
+		out.println("<h1 style='font-size:25px'>"+(String)session.getAttribute("user")+"</h1>");
+		
+		%>
+        
+        </div>
 
         <div class="container">
             <div class="query col-offset-2 col-md-6">

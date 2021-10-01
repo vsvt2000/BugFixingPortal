@@ -29,7 +29,9 @@
 		  }
 		  if(y>0){
 			  out.print("<p name='res' value='yes'>logged in successfully</p>");
-			  String redirectURL = "http://localhost:8083/bugfixing/dashboard.html?userId=uname";
+			  String redirectURL = "http://localhost:8083/bugfixing/dashboard.html";
+			  session = request.getSession();
+			  session.setAttribute("user", x.getString("username"));
 			  response.sendRedirect(redirectURL);
 		  }
 		  else{
