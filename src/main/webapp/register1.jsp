@@ -29,18 +29,18 @@
 		  if(x>0){
 			  //out.print("registered successfully");
 			  String msg="Registered Successfully!";
-			  String redirectURL = "http://localhost:8083/bugfixing/?msg="+msg;
+			  String redirectURL = "http://localhost:8080/BFP/?msg="+msg;
 			  response.sendRedirect(redirectURL);
 		  }
 		  else{
 			  //out.print("registration failed .Acc already exists!:(((( ");
 			  String msg="registration failed .Acc already exists!:(((( ";
-			  String redirectURL = "http://localhost:8083/bugfixing/signup.html?msg="+msg;
+			  String redirectURL = "http://localhost:8080/BFP/?msg="+msg;
 			  response.sendRedirect(redirectURL);
 		  }
 		  }catch(Exception e){
 			  String msg="registration failed .Acc already exists!:(((( ";
-			  String redirectURL = "http://localhost:8083/bugfixing/?msg="+msg;
+			  String redirectURL = "http://localhost:8083/BFP/?msg="+msg;
 			  response.sendRedirect(redirectURL);
 		  }
 	  }
