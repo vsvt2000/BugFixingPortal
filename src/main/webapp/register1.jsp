@@ -20,17 +20,34 @@
 	  
 	  if (conn!=null){
 		  try{
-		  PreparedStatement ps= conn.prepareStatement("insert into users values(?,?,?)");
+		  PreparedStatement ps= conn.prepareStatement("insert into users values(?,?)");
 
 		  ps.setString(1,uname);
-		  ps.setString(2,name);
-		  ps.setString(3,psw);
+		  ps.setString(2,psw);
 		  int x = ps.executeUpdate();
 		  if(x>0){
 			  //out.print("registered successfully");
-			  String msg="Registered Successfully!";
-			  String redirectURL = "http://localhost:8080/BFP/?msg="+msg;
-			  response.sendRedirect(redirectURL);
+			  try{
+				  PreparedStatement ps1= conn.prepareStatement("insert into user_details(username,name) values(?,?)");
+				  ps1.setString(1,uname);
+				  ps1.setString(2,name);
+				  int x1 = ps1.executeUpdate();
+				  if(x1>0){
+					  String msg="Registered Successfully!";
+					  String redirectURL = "http://localhost:8080/BFP/?msg="+msg;
+					  response.sendRedirect(redirectURL);
+				  }
+				  else{
+					  String msg="Failed in inner else";
+					  String redirectURL = "http://localhost:8080/BFP/?msg="+msg;
+					  response.sendRedirect(redirectURL);
+				  }
+			  }catch(Exception e){
+				  String msg="Failed in inner else with error";
+				  String redirectURL = "http://localhost:8080/BFP/?msg="+msg;
+				  response.sendRedirect(redirectURL);
+			  }
+			  
 		  }
 		  else{
 			  //out.print("registration failed .Acc already exists!:(((( ");
@@ -39,8 +56,8 @@
 			  response.sendRedirect(redirectURL);
 		  }
 		  }catch(Exception e){
-			  String msg="registration failed .Acc already exists!:(((( ";
-			  String redirectURL = "http://localhost:8083/BFP/?msg="+msg;
+			  String msg="registration failed .Acc already exists with error!:(((( ";
+			  String redirectURL = "http://localhost:8080/BFP/?msg="+msg;
 			  response.sendRedirect(redirectURL);
 		  }
 	  }

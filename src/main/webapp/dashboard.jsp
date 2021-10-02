@@ -29,7 +29,7 @@
                         <button class="dropbtn"><img class="img1" src="images/logo.png" alt="logo"></button>
                         <div class="dropdown-content">
                           <a href="aboutus.html">About Us</a>
-                          <a href="viewprofile.html">View My Profile</a>
+                          <a href="viewprofile.jsp">View My Profile</a>
                           <a href="feedback.html">Feedback</a>
                           <a href="sp_page.html">Upgrade to SP</a>
                           <a href="myissues.html">Issues Page</a>

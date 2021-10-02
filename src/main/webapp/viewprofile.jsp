@@ -1,3 +1,6 @@
+<%@page import="java.sql.*" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,44 +43,52 @@
         </nav>
 
     </div>
+    
     <!-- <button type="button" class="btn btn-secondary update">Update Profile</button> -->
     <a href="editprofile.html"> <button type="button" class="btn btn-secondary update">Update Profile</button> </a>
-    <div class="card">
-        <img src="images/profilephoto.jpg" alt="John" style="width:100%">
-        <h1>Harry Forbes</h1>
-        <p class="title">Student, CSE</p>
-        <p>Stanford University</p>
-       
-      </div>
+    <%
+  Connection conn=null;
+  
+  try{
+	  Class.forName("com.mysql.jdbc.Driver");
+	  conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/bugfixingportal","root","1234");
+	  String uname =request.getParameter("uname");
+	  String psw=request.getParameter("psw");
+	  
+	  if (conn!=null){
+		  PreparedStatement ps= conn.prepareStatement("select * from user_details where username=?");
 
-      <div class="card1 col-md-8 offset-3">
-<!--         
-        <h3><b>Username</b> : harrycodes123 </h3>
-        <h3><b>Email ID</b> : harry123@gmail.com</h3>
-        <h3><b>Date of Birth</b> : 27-06-1997</h3>
-        <h3><b>Points</b> : 17800</h3>
-        <h3><b>Level</b> : Advanced codemonk </h3>
-        <h3><b>Interests</b> : Machine Learning, Python , Java </h3> -->
+		  ps.setString(1,(String)session.getAttribute("user"));
+		  ResultSet x = ps.executeQuery();
+		  //out.print(x);
+		  int y=0;
+		  String y1="";String y2="";String y3="";int y4=0;String y5="";
+		  
+		  while(x.next()){
+			  y1=x.getString("name");
+			  y2=x.getString("email");
+			  y3=x.getString("date_of_birth");
+			  y4=x.getInt("points");
+			  y5=x.getString("level");
+			  y+=1;
+		  }
+		  
+		  if(y>0){
+			  out.print("<div class='card'><img src='images/profilephoto.jpg' alt='John' style='width:100%'><h1>"+y1+"</h1><p class='title'>Student</p></div>");
 
-        <div class="left">
-
-           <p><b>Username</b> </p> 
-      <p><b>Email ID</b></p>  
-        <p><b>Date of Birth</b></p> 
-        <p><b>Points</b> </p>
-        <p><b>Level</b> </p>
-        <p><b>Interests</b> </p>
-        </div>
-        <div class="right">
-
-           <p>harrycodes123</p> 
-            <p>harry123@gmail.com</p>
-            <p>27-06-1997</p>
-            <p> 17800</p>
-            <p> Advanced codemonk </p>
-            <p>Machine Learning, Python , Java </p> 
-        </div>
-         <br>
+out.print("<div class='card1 col-md-8 offset-3'><div class='left'><p><b>Username</b> </p> <p><b>Email ID</b></p>  <p><b>Date of Birth</b></p> <p><b>Points</b> </p><p><b>Level</b> </p><p><b>Interests</b> </p></div>");
+out.print("<div class='right'><p>"+(String)session.getAttribute("user")+"</p> <p>"+y2+"</p><p>"+y3+"</p><p>"+y4+"</p><p>"+y5+"</p><p>Machine Learning, Python , Java </p> </div>");
+         
+		  }
+		  else{
+			  out.print("<p name='res' value='no'>problem!!</p>");
+		  }
+	  }
+  }catch(Exception e){
+	  out.print("Something is wrong.."+e);
+  }
+  %>
+<br>
         <div style="padding-top: 250px;">
           <br>
           <h3>User Interaction Statistics</h3>
@@ -105,7 +116,7 @@
         </div>
       
         
-      </div>
+      </div>    
     
 </body>
 </html>
