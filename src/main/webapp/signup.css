@@ -71,4 +71,24 @@
       
   }
   
+  .valid {
+    color: green;
+  }
   
+  .valid:before {
+    position: relative;
+    left: -35px;
+    margin-left: 50px;
+    /* content: "&#10040;"; */
+  }
+
+  .invalid {
+    color: red;
+  }
+  
+  .invalid:before {
+    position: relative;
+    left: -35px;
+    margin-left: 50px;
+    /* content: "&#10060;"; */
+  }

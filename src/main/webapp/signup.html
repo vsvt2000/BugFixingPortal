@@ -12,6 +12,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
       <script src="javascript/common.js"></script>
+      <script src="javascript/signup.js"></script>
 </head>
 <body>
 <form action="register1.jsp" method="post">
@@ -28,14 +29,21 @@
           <label for="uname">Username</label>
           <input type="text" placeholder="Enter preffered Username" name="uname" required>
           <label for="psw">Password</label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
-          <label for="psw">Re-enter Password</label>
+          <input type="password" placeholder="Enter Password" name="psw" id="psw" onfocus="onFocus()" onblur="onBlur()" onkeyup="onKeyUp()" required>
+          <div id="message" style="display:none; background-color: rgb(128,128,128,0.5); padding: 25px;" >
+            <h3>Password must contain the following:</h3>
+            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+            <p id="number" class="invalid">A <b>number</b></p>
+            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+          </div>
+          <label for="psw1">Re-enter Password</label>
           <input type="password" placeholder="Enter Password" name="psw1" required>
 
     
   
-          <button type="submit" style="background-color:rgb(59, 59, 184)">Register</button>
-      
+          <button type="submit" id="regbutton" style="background-color:rgb(59, 59, 184)" disabled>Register</button>
+
         </div>
     </div>
 </form> 
