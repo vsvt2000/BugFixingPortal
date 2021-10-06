@@ -15,7 +15,7 @@
       <script src="javascript/signup.js"></script>
 </head>
 <body>
-<form action="register1.jsp" method="post">
+<form action="Register" method="post">
     <div class="float-container">
     <div class="imgcontainer" >
       <img src="images/signup1.png" alt="bgimg" style="height:100%;">
@@ -38,8 +38,10 @@
             <p id="length" class="invalid">Minimum <b>8 characters</b></p>
           </div>
           <label for="psw1">Re-enter Password</label>
-          <input type="password" placeholder="Enter Password" name="psw1" required>
-
+          <input type="password" placeholder="Enter Password" name="psw1" id="psw1" onfocus="onFocusCPs()" onblur="onBlurCPs()" onkeyup="onKeyUpCPs()" required>
+          <div id="message2" style="display:none; background-color: rgb(128,128,128,0.5); padding: 25px;" >
+            <p id="match" class="invalid"><b>Passwords must match</b></p>
+          </div>
     
   
           <button type="submit" id="regbutton" style="background-color:rgb(59, 59, 184)" disabled>Register</button>

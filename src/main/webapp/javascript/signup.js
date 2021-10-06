@@ -7,6 +7,17 @@ function onFocus () {
     document.getElementById("message").style.display = "none";
   }
   
+  function onFocusCPs() {
+    document.getElementById("message2").style.display = "block";
+  }
+  
+  // When the user clicks outside of the password field, hide the message box
+  function onBlurCPs() {
+    document.getElementById("message2").style.display = "none";
+  }
+
+  
+  var ctr = 0;
   // When the user starts to type something inside the password field
   function onKeyUp() {
     // Validate lowercase letters
@@ -17,8 +28,6 @@ function onFocus () {
     var number = document.getElementById("number");
     var length = document.getElementById("length");
     var button = document.getElementById("regbutton");
-
-    var ctr = 0;
 
     if(myInput.value.match(lowerCaseLetters)) {
       letter.classList.remove("invalid");
@@ -65,10 +74,36 @@ function onFocus () {
       ctr -= 1;
     }
 
-    if (ctr == 4) {
+    if (ctr == 5) {
         button.disabled = false;
     }
 
     else
         button.disabled = true;
+  }
+
+  function onKeyUpCPs() {
+    console.log("Hello");
+    var psw = document.getElementById("psw");
+    var cpsw = document.getElementById("psw1");
+    var match = document.getElementById("match");
+
+    if(psw.value == cpsw.value) {
+      match.classList.remove("invalid");
+      match.classList.add("valid");
+      ctr += 1;
+    }
+
+    else {
+      match.classList.remove("valid");
+      match.classList.add("invalid");
+      ctr -= 1;
+    }
+
+    if (ctr == 5) {
+      button.disabled = false;
+  }
+
+  else
+      button.disabled = true;
   }
