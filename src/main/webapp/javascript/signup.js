@@ -83,12 +83,12 @@ function onFocus () {
   }
 
   function onKeyUpCPs() {
-    console.log(ctr);
-    var ctr=0;
+    console.log("Hello");
     var psw = document.getElementById("psw");
     var cpsw = document.getElementById("psw1");
     var match = document.getElementById("match");
-    var button= document.getElementById("regbutton");
+	var button = document.getElementById("regbutton");
+
     if(psw.value == cpsw.value) {
       match.classList.remove("invalid");
       match.classList.add("valid");
@@ -101,7 +101,7 @@ function onFocus () {
       ctr -= 1;
     }
 
-    if (ctr == 1) {
+    if (ctr == 5) {
       button.disabled = false;
   }
 
