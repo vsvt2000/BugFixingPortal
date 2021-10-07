@@ -87,6 +87,7 @@ function onFocus () {
     var psw = document.getElementById("psw");
     var cpsw = document.getElementById("psw1");
     var match = document.getElementById("match");
+	var button = document.getElementById("regbutton");
 
     if(psw.value == cpsw.value) {
       match.classList.remove("invalid");

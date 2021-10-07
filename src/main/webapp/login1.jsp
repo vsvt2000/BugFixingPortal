@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -23,7 +26,12 @@
       <div class="imgcontainer">
         <img src="images/login.jpg" alt="bgimg" style="height:100% ; width:100%" >
       </div>
-  
+  	  <div><%
+			HttpSession session = request.getSession();
+			String message = (String)session.getAttribute("status");
+			if(message != null)
+			{out.println("Registration Successful!");}
+	   %></div>
       <div class="container">
         <div class="new">
           <p>LOGIN TO <strong>BUG FIXING PORTAL</strong></p>
