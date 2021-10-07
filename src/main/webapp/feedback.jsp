@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,43 +37,46 @@
 
         </nav>
         </div>
+        
     <div class="app">
         <h1 style="text-align: center; margin-top: 50px;">Was this forum helpful?</h1>
         <p style="text-align: center;">Let us know how we did</p>
-      
+      <form action="feedback">
+     
+     
         <div class="container">
           <div class="item">
             <label for="0">
             <input class="radio" type="radio" name="feedback" id="0" value="0">
-            <span>😢</span>
+            <span>&#128512</span>
           </label>
           </div>
       
           <div class="item">
             <label for="1">
             <input class="radio" type="radio" name="feedback" id="1" value="1">
-            <span>🙁</span>
+            <span>&#128512;</span>
           </label>
           </div>
       
           <div class="item">
             <label for="2">
             <input class="radio" type="radio" name="feedback" id="2" value="2">
-            <span>🙂</span>
+            <span>&#128512;</span>
           </label>
           </div>
       
           <div class="item">
             <label for="3">
             <input class="radio" type="radio" name="feedback" id="3" value="3">
-            <span>😁</span>
+            <span>&#128512;</span>
           </label>
           </div>
       
           <div class="item">
             <label for="4">
             <input class="radio" type="radio" name="feedback" id="4" value="4">
-            <span>😍</span>
+            <span>&#128512;</span>
           </label>
           </div>
       
@@ -85,7 +90,9 @@
         <br>
         <a href="dashboard.jsp">  <button type="button" class="btn btn-primary offset-md-5"  style="margin-left: 45%;">Submit Feedback</button> </a>
        
+      </form>
       </div>
+       
       
 
 </body>
