@@ -1,3 +1,4 @@
+
 import javax.servlet.http.*;
 import java.sql.*;
 import javax.servlet.ServletException;
@@ -6,54 +7,31 @@ import java.io.*;
 
 //@WebServlet("/Register")
 public class Register extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
-        PrintWriter out = response.getWriter();
-
-        Connection conn=null;
-        
-        try{
-        	String uname = (String)request.getParameter("uname");
-            String pass = (String)request.getParameter("psw");
-            String name = (String)request.getParameter("name");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String uname = (String)request.getAttribute("uname");
+		String pass = (String)request.getAttribute("psw");
+		String name = (String)request.getAttribute("name");
+		PrintWriter out = response.getWriter();
+		
+		try {
+			java.sql.Connection con;
             Class.forName("com.mysql.jdbc.Driver");
-            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/bugfixingportal","root","1234");
-             
-            if (conn!=null){
-                try{
-                	
-                PreparedStatement ps= conn.prepareStatement("insert into user_details(username,name,password) values(?,?,?)");
-                
-                ps.setString(1,uname);
-                ps.setString(2,name);
-                ps.setString(3,pass);
-                int x = ps.executeUpdate();
-                out.print("in");
-                if(x>0){
-                    //out.print("registered successfully");
-                    
-                        
-                            String msg="Registration success";
-                            //String redirectURL = "hlogin.html";
-                            response.sendRedirect("login.html?msg="+msg);
-                        
-                    }
-                    
-                
-                else{
-                    //out.print("registration failed .Acc already exists!:(((( ");
-                    String msg="registration failed .Acc already exists!:(((( ";
-                    String redirectURL = "http://localhost:8080/BFP/?msg="+msg;
-                    response.sendRedirect(redirectURL);
-                }
-                }catch(Exception e){
-                    String msg="registration failed .Acc already exists with error!:(((( "+e+name+uname+pass;
-                    String redirectURL = "http://localhost:8080/BFP/?msg="+msg;
-                    response.sendRedirect(redirectURL);
-                }
+            con = DriverManager.getConnection("jdbc:mysql://localhost/"+"bugfixingportal", "root", "1234");
+            Statement stmt = con.createStatement();
+            
+            int change = stmt.executeUpdate("insert into users values(\""+uname+"\",\""+pass+"\")");
+            if(change>0) {
+            	change = stmt.executeUpdate("insert into user_details values(\""+uname+"\",\""+name+"\")");
+            	HttpSession session = request.getSession();
+            	session.setAttribute("status", "1");
+            	response.sendRedirect("login1.jsp");
             }
-        }catch(Exception e){
-            e.printStackTrace();
-        }}}
+		}
+		catch (Exception e) {
+			out.println(e);
+		}
+	}
+
+}
