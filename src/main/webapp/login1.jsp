@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
 <body>
-<form  method="post" action="login.jsp">
+<form  method="post" action="login">
     <div class="float-container">
       <div class="imgcontainer">
         <img src="images/login.jpg" alt="bgimg" style="height:100% ; width:100%" >
@@ -40,10 +40,10 @@
         <div class="new">
           <p>LOGIN TO <strong>BUG FIXING PORTAL</strong></p>
           <label for="uname">Username</label>
-          <input type="text" placeholder="Enter Username" name="uname" required>
+          <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
   
           <label for="psw">Password</label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
+          <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
   
           <button type="submit" >Login</button>
           <p style="text-align: center;">or</p>
