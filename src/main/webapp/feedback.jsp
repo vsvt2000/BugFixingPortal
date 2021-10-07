@@ -69,14 +69,14 @@
           <div class="item">
             <label for="3">
             <input class="radio" type="radio" name="feedback" id="3" value="3">
-            <span>&#128512;</span>
+            <span>🙂</span>
           </label>
           </div>
       
           <div class="item">
             <label for="4">
             <input class="radio" type="radio" name="feedback" id="4" value="4">
-            <span>&#128512;</span>
+            <span>🙂</span>
           </label>
           </div>
       
